@@ -83,12 +83,9 @@ cacheSolve <- function(x, ...) {
                      "Don't say I didn't warn you...")
         }
         
-        # Compute the inverse using the solve function
-        inverse <- solve(data, ...)
-
-        # Set the inverse (in the cache)
-        x$setinverse(inverse)
+        # Compute the inverse using the solve function and store it
+        x$setinverse(solve(data, ...))
         
         # Return the inverse
-        inverse
+        x$getinverse()
 }
